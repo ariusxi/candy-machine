@@ -1,0 +1,25 @@
+:root {
+	--machine-color: hsv(180, 2%, 90%);
+	--machine-width: 28em;
+}
+
+.Machine {
+	max-width: var(--machine-width);
+	margin: 0;
+	background-color: var(--machine-color);
+	box-shadow: 0 0 0 1px fadeout(var(--color-black), 95%);
+	overflow: hidden;
+}
+
+@media (min-width: calc(var(--machine-width) * 1.125)) {
+	.Machine {
+		margin-top: 2em;
+	}
+}
+
+@media (min-width: calc(var(--machine-width) * 2.75)) {
+	.Machine {
+		position: relative;
+		max-width: calc(var(--machine-width) * 2);
+	}
+}

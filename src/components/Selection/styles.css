@@ -1,0 +1,39 @@
+:root {
+	--button-border: #E1E6E6;
+	--button-color: #464E4E;
+	--button-color-darker: #353b3b;
+}
+
+.Selection {
+	display: table;
+	width: 100%;
+}
+
+.Selection span {
+	width: 1em;
+	line-height: 2em;
+	font-size: 1.125em;
+	font-weight: 600;
+	background-color: var(--button-color);
+	color: var(--color-white);
+	transition: background-color 0.2s, color 0.2s;
+	cursor: pointer;
+}
+
+.Selection span:hover {
+	background-color: var(--button-color-darker);
+}
+
+.Selection span:not(:last-child) {
+	border-right: 1px solid var(--button-border);
+}
+
+.Selection span:first-child {
+	border-radius: 0.25em 0 0 0.25em;
+}
+
+.Selection > span {
+	display: table-cell;
+	text-align: center;
+	cursor: pointer;
+}

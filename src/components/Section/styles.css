@@ -1,5 +1,9 @@
+:root {
+	--section-color: #e1e6e6;
+}
+
 .Section {
-	background-color: var(--machine-color);
+	background-color: var(--section-color);
 	margin-bottom: 0.25em;
 	padding: 0.875em;
 	overflow: hidden;
@@ -9,7 +13,7 @@
 	margin-bottom: 2em;
 }
 
-@media (min-width: calc(var(--machine-width) * 2.75)) {
+@media (min-width: calc(28em * 2.75)) {
 	.Section {
 		float: left;
 		width: 49.75%;

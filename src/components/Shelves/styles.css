@@ -1,0 +1,7 @@
+:root {
+	--shelves-color: #242424;
+}
+
+.Shelves {
+	background-color: var(--shelves-color);
+}

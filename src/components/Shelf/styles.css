@@ -1,5 +1,52 @@
+:root {
+	--shelf-color-detail: #3d3d3d;
+	--shelf-color-border: #242424;
+	--shelf-color-font: rgba(255, 255, 255, 0.75);
+}
+
 .Shelf {
 	display: inline-block;
 	position: relative;
 	width: calc(100% / 3);
+}
+
+.Shelf .item {
+	width: 100%;
+	height: 7em;
+	background: center bottom no-repeat;
+	background-size: container;
+}
+
+.Shelf .detail {
+	position: relative;
+	color: var(--shelf-color-font);
+	height: 1.5em;
+	background-color: var(--shelf-color-detail);
+	border-top: none;
+	border-bottom: none;
+}
+
+.Shelf .detail h3 {
+	visibility: hidden;
+	position: absolute;
+}
+
+.Shelf .detail span {
+	display: inline-block;
+	margin: 0 0.25em;
+	padding: 0 0.25em;
+	line-height: 1.5em;
+}
+
+.Shelf .detail span.code {
+	letter-spacing: 0.125em;
+}
+
+.Shelf .detail span.price {
+	position: absolute;
+	right: 0;
+}
+
+.Shelf .detail span.price::after {
+	content: 'p';
 }

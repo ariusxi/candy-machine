@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 
+import Coins from './../components/Coins'
 import Machine from './../components/Machine'
 import Section from './../components/Section'
 import Selection from './../components/Selection'
 import Shelves from './../components/Shelves'
+import Tray from './../components/Tray'
+import Vend from './../components/Vend'
 
 class CandyMachine extends Component {
 
@@ -16,9 +19,15 @@ class CandyMachine extends Component {
 				<Section>
 					<Selection/>
 				</Section>
-				<Section>Candy Machine</Section>
-				<Section>Candy Machine</Section>
-				<Section>Candy Machine</Section>
+				<Section>
+					<Coins/>
+				</Section>
+				<Section>
+					<Vend/>
+				</Section>
+				<Section>
+					<Tray/>
+				</Section>
             </Machine>
         )
     }

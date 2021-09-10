@@ -1,0 +1,26 @@
+:root {
+	--machine-color: #464e4e;
+	--machine-width: 28em;
+	--machine-box-shadow: 0 0 0 1px rgb(0 0 0 / 5%);
+}
+
+.Machine {
+	max-width: var(--machine-width);
+	margin: auto;
+	background-color: var(--machine-color);
+	box-shadow: var(--machine-box-shadow);
+	overflow: hidden;
+}
+
+@media (min-width: calc(28em * 1.125)) {
+	.Machine {
+		margin-top: 2em;
+	}
+}
+
+@media (min-width: calc(28em * 2.75)) {
+	.Machine {
+		position: relative;
+		max-width: calc(var(--machine-width) * 2);
+	}
+}

@@ -16,7 +16,7 @@
 @media (min-width: calc(28em * 2.75)) {
 	.Section {
 		float: left;
-		width: 49.75%;
+		width: 97%;
 	}
 
 	.Section:nth-child(n + 2):not(:last-child) {

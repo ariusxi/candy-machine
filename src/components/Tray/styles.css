@@ -1,0 +1,53 @@
+:root {
+	--border-tray: #C5C8C8;
+	--color-tray: #242424;
+
+	--color-tray-content: #E1E6E6;
+	--color-tray-hover: #535454;
+}
+
+.Tray .tray {
+	width: 64%;
+}
+
+.Tray .tray,
+.Tray .coin_return {
+	float: left;
+	width: 50%;
+	color: var(--color-white);
+	height: 6em;
+	line-height: 6em;
+	position: relative;
+	border: 0.125em solid var(--border-tray);
+	background-color: var(--color-tray);
+	overflow: hidden;
+	text-align: center;
+}
+
+.Tray .tray {
+	width: 64%;
+}
+
+.Tray .coin_return {
+	width: 32%;
+	margin-left: 2%;
+}
+
+.Tray .tray:before,
+.Tray .coin_return:before  {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-tray-content);
+	transition: height 0.4s, background 0.4s;
+}
+
+.Tray .tray:hover:before,
+.Tray .coin_return:hover:before {
+	height: 20%;
+	background: var(--color-tray-hover);
+}

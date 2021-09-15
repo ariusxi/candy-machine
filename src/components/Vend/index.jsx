@@ -6,13 +6,13 @@ const Vend = _ => {
 	return (
 		<div className="Vend">
 			<form>
-				<input 
-					type="text"
-					name="selection"
+			<input 
+					type="number"
+					name="candyValue"
 					required="true"
-					placeholder="xx"
+					placeholder="0.00"
 					maxlength="2"
-					pattern="[a-zA-Z]{1}[0-9]{1}"/>
+					pattern="d+(.d{2})?"/>
 				<input
 					type="number"
 					name="coinage"
@@ -21,7 +21,7 @@ const Vend = _ => {
 					step="0.10"
 					value="0.00"
 					pattern="d+(.d{2})?"/>
-				<button type="submit">Vend</button>
+
 			</form>
 		</div>
 	)

@@ -34,7 +34,7 @@
 	text-transform: uppercase;
 }
 
-.Vend form input[name="selection"] {
+.Vend form input[name="candyValue"] {
 	width: 1.75em;
 	text-align: center;
 }

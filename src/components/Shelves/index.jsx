@@ -10,12 +10,6 @@ const Shelves = _ => {
 			<Shelf/>
 			<Shelf/>
 			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
 		</div>
 	)
 }

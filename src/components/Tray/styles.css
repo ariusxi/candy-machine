@@ -1,11 +1,3 @@
-:root {
-	--border-tray: #C5C8C8;
-	--color-tray: #242424;
-
-	--color-tray-content: #E1E6E6;
-	--color-tray-hover: #535454;
-}
-
 .Tray .tray {
 	width: 64%;
 }

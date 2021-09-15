@@ -3,12 +3,18 @@ import Shelf from './../Shelf'
 
 import './styles.css'
 
-const Shelves = _ => {
+const Shelves = props => {
+	const { candyList } = props
 	return (
 		<div className="Shelves">
-			<Shelf id="candy 1" value={6} />
-			<Shelf id="candy 2" value={8} />
-			<Shelf id="candy 3" value={10} />
+			{candyList.map(candy => (
+				<Shelf
+					candyNumber={candy.candyNumber}
+					candyImage={candy.candyImage}
+					candyPrice={candy.candyPrice}
+					candyName={candy.candyName}
+					isFullSize={candy.isFullSize} />
+			))}
 		</div>
 	)
 }

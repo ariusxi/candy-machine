@@ -1,9 +1,3 @@
-:root {
-	--machine-color: #464e4e;
-	--machine-width: 28em;
-	--machine-box-shadow: 0 0 0 1px rgb(0 0 0 / 5%);
-}
-
 .Machine {
 	max-width: var(--machine-width);
 	margin: auto;

@@ -9,3 +9,4 @@ ReactDOM.render(
   	<CandyMachine />,
   	document.getElementById('root'),
 );
+

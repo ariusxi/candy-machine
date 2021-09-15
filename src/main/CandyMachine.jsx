@@ -10,20 +10,40 @@ import Vend from './../components/Vend'
 
 class CandyMachine extends Component {
 
+	state = {
+		selectedCandy: null,
+		candyValue: 0,
+	}
+
+	constructor(props){
+		super(props)
+		
+		this.selectCandy = this.selectCandy.bind(this)
+	}
+
+	selectCandy(candyNumber){
+		this.setState({
+			selectedCandy: candyNumber,
+			candyValue: candyNumber*2,
+		})
+	}
+
     render() {
-        return (
+		return (
             <Machine>
                	<Section>
 				   <Shelves/>
 				</Section>
 				<Section>
-					<Selection/>
+					<Selection
+						selectCandy={this.selectCandy}/>
 				</Section>
 				<Section>
 					<Coins/>
 				</Section>
 				<Section>
-					<Vend/>
+					<Vend 
+						candyValue={this.state.candyValue}/>
 				</Section>
 				<Section>
 					<Tray/>

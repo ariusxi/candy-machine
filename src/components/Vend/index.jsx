@@ -25,7 +25,6 @@ const Vend = props => {
 					step="0.10"
 					value="0.00"
 					pattern="d+(.d{2})?" />
-
 			</form>
 		</div>
 	)

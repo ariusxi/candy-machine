@@ -11,25 +11,25 @@ import Vend from './../components/Vend'
 class CandyMachine extends Component {
 
 	state = {
-		selectedCandy: null,
-		candyValue: 0,
+		selectedCandy: '',
+		candyPrice: 0,
 		candyList: [{
 			candyNumber: 1,
 			candyImage: "/candy1.svg",
 			candyPrice: 6.00,
-			candyName: "candy 1"
+			candyName: "Cho co la te"
 		},
 		{
 			candyNumber: 2,
 			candyImage: "/candy2.svg",
-			candyPrice: 8.00,
-			candyName: "candy 2"
+			candyPrice: 7.00,
+			candyName: "Biscoitos"
 		},
 		{
 			candyNumber: 3,
 			candyImage: "/candy3.svg",
-			candyPrice: 10.00,
-			candyName: "candy 3",
+			candyPrice: 8.00,
+			candyName: "Doces Sortidos",
 			isFullSize: true,
 		}],
 	}
@@ -41,9 +41,10 @@ class CandyMachine extends Component {
 	}
 
 	selectCandy(candyNumber) {
+		const { candyPrice, candyName } = this.state.candyList[candyNumber-1]
 		this.setState({
-			selectedCandy: candyNumber,
-			candyValue: candyNumber * 2,
+			selectedCandy: (`${candyNumber} - ${candyName}`),
+			candyPrice,
 		})
 	}
 
@@ -63,7 +64,8 @@ class CandyMachine extends Component {
 				</Section>
 				<Section>
 					<Vend
-						candyValue={this.state.candyValue} />
+						candyID={this.state.selectedCandy}
+						candyPrice={this.state.candyPrice} />
 				</Section>
 				<Section>
 					<Tray />

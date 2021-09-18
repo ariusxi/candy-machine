@@ -4,26 +4,26 @@ import './styles.css'
 
 
 const Vend = props => {
-	const { candyValue } = props
+	const { candyID, candyPrice } = props
 
 	return (
 		<div className="Vend">
 			<form>
 				<input
-					type="number"
-					name="candyValue"
-					required="true"
-					placeholder="0.00"
-					value={candyValue}
-					maxlength="2"
-					pattern="d+(.d{2})?" />
+					readOnly
+					type="text"
+					name="candyID"
+					required={true}
+					placeholder="Empty"
+					value={candyID} />
 				<input
+					readOnly
 					type="number"
 					name="coinage"
-					required="true"
+					required={true}
 					placeholder="0.00"
 					step="0.10"
-					value="0.00"
+					value={candyPrice}
 					pattern="d+(.d{2})?" />
 			</form>
 		</div>

@@ -1,11 +1,15 @@
 import React from 'react'
 
+import MetalSpring from './../MetalSpring'
+
 import './styles.css'
 
 const Shelf = _ => {
 	return (
 		<div className="Shelf">
-			<div className="item"></div>
+			<div className="item">
+				<MetalSpring/>
+			</div>
 			<div className="detail">
 				<h3>Candy</h3>
 				<span className="code">F1</span>

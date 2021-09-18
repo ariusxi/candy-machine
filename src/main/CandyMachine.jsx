@@ -20,10 +20,10 @@ class CandyMachine extends Component {
 					<Selection/>
 				</Section>
 				<Section>
-					<Coins/>
+					<Vend/>
 				</Section>
 				<Section>
-					<Vend/>
+					<Coins/>
 				</Section>
 				<Section>
 					<Tray/>

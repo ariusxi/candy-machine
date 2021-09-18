@@ -1,0 +1,30 @@
+.Coins {
+	display: table;
+	width: 100%;
+}
+
+.Coins span {
+	cursor: pointer;
+}
+
+.Coins > .coin {
+	display: table-cell;
+	text-align: center;
+	cursor: pointer;
+}
+
+.Coins > .coin span {
+	display: block;
+	height: 5em;
+	margin: 0 5%;
+	position: relative;
+	overflow: hidden;
+	background: center center no-repeat var(--coin-color);
+	border-radius: 0.25em;
+	color: transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	box-shadow: var(--coin-box-shadow);
+}

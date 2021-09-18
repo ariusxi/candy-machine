@@ -1,0 +1,26 @@
+.Section {
+	background-color: var(--section-color);
+	margin-bottom: 0.25em;
+	padding: 0.875em;
+	overflow: hidden;
+}
+
+.Section:last-child {
+	margin-bottom: 2em;
+}
+
+@media (min-width: calc(28em * 2.75)) {
+	.Section {
+		float: left;
+		width: 97%;
+	}
+
+	.Section:nth-child(n + 2):not(:last-child) {
+		float: right;
+	}
+
+	.Section:last-child {
+		float: left;
+		clear: left;
+	}
+}

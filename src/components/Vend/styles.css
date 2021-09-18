@@ -1,0 +1,60 @@
+:root {
+	--vend-input-color: #242424;
+	--vend-input-font: #41d9d9;
+	--vend-input-box-shadow: 0 0 0.125em rgb(65 217 217 / 75%);
+
+	--vend-button-color: #464e4e;
+	--vend-button-hover: #353b3b;
+}
+
+.Vend form {
+	text-align: center;
+}
+
+.Vend form input, .Vend form button {
+	display: inline-block;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	background: none;
+	border-radius: 0.125em;
+	outline: none;
+	vertical-align: middle;
+	margin: 0.0625em 5px;
+}
+
+.Vend form input {
+	background: var(--vend-input-color);
+	color: var(--vend-input-font);
+	text-shadow: var(--vend-input-box-shadow);
+	padding: 0 0.25em;
+	font-size: 2em;
+	line-height: 1.25em;
+	height: 1.25em;
+	text-transform: uppercase;
+}
+
+.Vend form input[name="selection"] {
+	width: 1.75em;
+	text-align: center;
+}
+
+.Vend form input[name="coinage"] {
+	width: 2.75em;
+	text-align: right;
+}
+
+.Vend form button {
+	text-transform: uppercase;
+	font-size: 1.25em;
+	line-height: 2em;
+	padding: 0 0.75em;
+	border-radius: 0.2em;
+	background: var(--vend-button-color);
+	color: var(--color-white);
+	transition: background 0.2s;
+}
+
+.Vend form button:hover {
+	background: var(--vend-button-hover);
+}

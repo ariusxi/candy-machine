@@ -1,9 +1,3 @@
-:root {
-	--button-border: #E1E6E6;
-	--button-color: #464E4E;
-	--button-color-darker: #353b3b;
-}
-
 .Selection {
 	display: table;
 	width: 100%;

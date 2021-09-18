@@ -12,7 +12,7 @@ class CandyMachine extends Component {
 
 	state = {
 		selectedCandy: null,
-		candyValue: 0,
+		candyPrice: 0,
 		candyList: [{
 			candyNumber: 1,
 			candyImage: "/candy1.svg",
@@ -40,10 +40,10 @@ class CandyMachine extends Component {
 		this.selectCandy = this.selectCandy.bind(this)
 	}
 
-	selectCandy(candyNumber) {
+	selectCandy(candyNumber, candyPrice) {
 		this.setState({
 			selectedCandy: candyNumber,
-			candyValue: candyNumber * 2,
+			candyPrice,
 		})
 	}
 
@@ -63,7 +63,8 @@ class CandyMachine extends Component {
 				</Section>
 				<Section>
 					<Vend
-						candyValue={this.state.candyValue} />
+						candyID={this.state.selectedCandy}
+						candyPrice={this.state.candyPrice} />
 				</Section>
 				<Section>
 					<Tray />

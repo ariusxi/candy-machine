@@ -4,17 +4,17 @@ import './styles.css'
 
 
 const Vend = props => {
-	const { candyValue } = props
+	const { candyID, candyPrice } = props
 
 	return (
 		<div className="Vend">
 			<form>
 				<input
 					type="number"
-					name="candyValue"
+					name="candyID"
 					required="true"
 					placeholder="0.00"
-					value={candyValue}
+					value={candyID}
 					maxlength="2"
 					pattern="d+(.d{2})?" />
 				<input
@@ -23,7 +23,7 @@ const Vend = props => {
 					required="true"
 					placeholder="0.00"
 					step="0.10"
-					value="0.00"
+					value={candyPrice}
 					pattern="d+(.d{2})?" />
 			</form>
 		</div>

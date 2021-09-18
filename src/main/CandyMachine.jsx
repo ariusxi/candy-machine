@@ -13,44 +13,64 @@ class CandyMachine extends Component {
 	state = {
 		selectedCandy: null,
 		candyValue: 0,
+		candyList: [{
+			candyNumber: 1,
+			candyImage: "/candy1.svg",
+			candyPrice: 6.00,
+			candyName: "candy 1"
+		},
+		{
+			candyNumber: 2,
+			candyImage: "/candy2.svg",
+			candyPrice: 8.00,
+			candyName: "candy 2"
+		},
+		{
+			candyNumber: 3,
+			candyImage: "/candy3.svg",
+			candyPrice: 10.00,
+			candyName: "candy 3",
+			isFullSize: true,
+		}],
 	}
 
-	constructor(props){
+	constructor(props) {
 		super(props)
-		
+
 		this.selectCandy = this.selectCandy.bind(this)
 	}
 
-	selectCandy(candyNumber){
+	selectCandy(candyNumber) {
 		this.setState({
 			selectedCandy: candyNumber,
-			candyValue: candyNumber*2,
+			candyValue: candyNumber * 2,
 		})
 	}
 
-    render() {
+	render() {
 		return (
-            <Machine>
-               	<Section>
-				   <Shelves/>
+			<Machine>
+				<Section>
+					<Shelves
+						candyList={this.state.candyList} />
 				</Section>
 				<Section>
 					<Selection
-						selectCandy={this.selectCandy}/>
+						selectCandy={this.selectCandy} />
 				</Section>
 				<Section>
-					<Coins/>
+					<Coins />
 				</Section>
 				<Section>
-					<Vend 
-						candyValue={this.state.candyValue}/>
+					<Vend
+						candyValue={this.state.candyValue} />
 				</Section>
 				<Section>
-					<Tray/>
+					<Tray />
 				</Section>
-            </Machine>
-        )
-    }
+			</Machine>
+		)
+	}
 
 }
 

@@ -40,7 +40,9 @@ class CandyMachine extends Component {
 		this.selectCandy = this.selectCandy.bind(this)
 	}
 
-	selectCandy(candyNumber, candyPrice) {
+	selectCandy(candyNumber) {
+		const candyPrice = this.state.candyList[candyNumber-1]
+			console.log(candyPrice)
 		this.setState({
 			selectedCandy: candyNumber,
 			candyPrice,

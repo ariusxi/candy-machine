@@ -1,15 +1,12 @@
 import React from 'react'
 
-import { ReactComponent as Spring } from './../../assets/images/spiral.svg'
+import Spring from './../../assets/images/spiral.svg'
 
 import './styles.css'
 
 const MetalSpring = _ => {
 	return (
-		<Spring 
-			fill='grey' 
-			stroke="current"
-			className="Spring"/>
+		<img src={Spring} alt={Spring}/>
 	)
 }
 

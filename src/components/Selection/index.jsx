@@ -2,15 +2,14 @@ import React from 'react'
 
 import './styles.css'
 
-const Selection = _ => {
+const Selection = props => {
+	const { selectCandy } = props
+
 	return (
 		<div className="Selection">
-			<span>F</span>
-			<span>P</span>
-			<span>S</span>
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
+			<span onClick={() => selectCandy(1)}>1</span>
+			<span onClick={() => selectCandy(2)}>2</span>
+			<span onClick={() => selectCandy(3)}>3</span>
 		</div>
 	)
 }

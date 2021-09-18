@@ -1,0 +1,9 @@
+.Candy {
+  height: 75%;
+  width: 75%;
+}
+
+.Candy.full-size {
+  height: 100%;
+  width: 100%;
+}

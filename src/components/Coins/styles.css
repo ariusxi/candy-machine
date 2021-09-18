@@ -1,8 +1,3 @@
-:root {
-	--coin-color: #D6DCDC;
-	--coin-box-shadow: inset 0 -0.4em 0 -0.25em rgb(0 0 0 / 25%);
-}
-
 .Coins {
 	display: table;
 	width: 100%;

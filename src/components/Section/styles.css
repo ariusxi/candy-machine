@@ -1,7 +1,3 @@
-:root {
-	--section-color: #e1e6e6;
-}
-
 .Section {
 	background-color: var(--section-color);
 	margin-bottom: 0.25em;

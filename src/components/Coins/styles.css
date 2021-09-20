@@ -13,14 +13,14 @@
 	padding: 15px 25px;
 	font-size: 20px;
 	cursor: pointer;
-	color: white;
-	background-color: #08b2e6;
+	color: var(--shelves-color);
+	background-color: var(--coins-color-button);
 	border: none;
 	border-radius: 5px;
-	border-bottom: 3px solid #069;
+	border-bottom: 3px solid var(--coins-color-border);
 	transition: all .2s;
 }
  
 .Coins > .coin .button:active {
-	background-color: #069;
+	background-color: var(--coins-color-border);
 }

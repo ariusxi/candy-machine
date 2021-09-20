@@ -26,13 +26,18 @@
 	--shelf-color-detail: #f9ce74;
 	--shelf-color-border: #f9ce74;
 	--shelf-color-font: #464E4E;
-
+	
 	/* Shelves */
 	--shelves-color: #242424;
 
 	/* Tray */
 	--border-tray: #02adbd;
 	--color-tray: #242424;
+
+	/* Coins */
+	--coins-color-button:#f9ce74;
+	--coins-color-border:#ccaa5f;
+
 
 	--color-tray-content: #596276;
 	--color-tray-hover: #303853;

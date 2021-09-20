@@ -5,14 +5,14 @@ import './styles.css'
 const Coins = _ => {
 	return (
 		<div className="Coins">
-			<div className="coin">
-				<span>50p</span>
+			<div className ="coin">
+				<button class="button">R$ 1,00</button>
 			</div>
-			<div className="coin">
-				<span>20p</span>
+			<div className ="coin">
+				<button class="button">R$ 2,00</button>
 			</div>
-			<div className="coin">
-				<span>10p</span>
+			<div className ="coin">
+				<button class="button">R$ 5,00</button>
 			</div>
 		</div>
 	)

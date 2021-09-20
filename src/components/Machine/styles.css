@@ -4,11 +4,13 @@
 	background-color: var(--machine-color);
 	box-shadow: var(--machine-box-shadow);
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 @media (min-width: calc(28em * 1.125)) {
 	.Machine {
-		margin-top: 2em;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 }
 

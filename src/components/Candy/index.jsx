@@ -1,11 +1,13 @@
 import React from 'react'
+
 import './styles.css'
 
 const Candy = props => {
-  let classImage = "candy"
+  let classImage = "Candy"
   if (props.isFullSize) {
     classImage += " full-size"
   }
+
   return (
     <img
       src={props.candyImage}

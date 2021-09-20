@@ -11,46 +11,68 @@ import Vend from './../components/Vend'
 class CandyMachine extends Component {
 
 	state = {
-		selectedCandy: null,
-		candyValue: 0,
+		selectedCandy: '',
+		candyPrice: 0,
+		candyList: [{
+			candyNumber: 1,
+			candyImage: "/candy1.svg",
+			candyPrice: 6.00,
+			candyName: "Cho co la te"
+		},
+		{
+			candyNumber: 2,
+			candyImage: "/candy2.svg",
+			candyPrice: 7.00,
+			candyName: "Biscoitos"
+		},
+		{
+			candyNumber: 3,
+			candyImage: "/candy3.svg",
+			candyPrice: 8.00,
+			candyName: "Doces Sortidos",
+			isFullSize: true,
+		}],
 	}
 
-	constructor(props){
+	constructor(props) {
 		super(props)
-		
+
 		this.selectCandy = this.selectCandy.bind(this)
 	}
 
-	selectCandy(candyNumber){
+	selectCandy(candyNumber) {
+		const { candyPrice, candyName } = this.state.candyList[candyNumber-1]
 		this.setState({
-			selectedCandy: candyNumber,
-			candyValue: candyNumber*2,
+			selectedCandy: (`${candyNumber} - ${candyName}`),
+			candyPrice,
 		})
 	}
 
-    render() {
+	render() {
 		return (
-            <Machine>
-               	<Section>
-				   <Shelves/>
+			<Machine>
+				<Section>
+					<Shelves
+						candyList={this.state.candyList} />
 				</Section>
 				<Section>
 					<Selection
-						selectCandy={this.selectCandy}/>
+						selectCandy={this.selectCandy} />
 				</Section>
 				<Section>
-					<Coins/>
+					<Coins />
 				</Section>
 				<Section>
-					<Vend 
-						candyValue={this.state.candyValue}/>
+					<Vend
+						candyID={this.state.selectedCandy}
+						candyPrice={this.state.candyPrice} />
 				</Section>
 				<Section>
-					<Tray/>
+					<Tray />
 				</Section>
-            </Machine>
-        )
-    }
+			</Machine>
+		)
+	}
 
 }
 

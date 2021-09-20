@@ -9,6 +9,9 @@
 	height: 7em;
 	background: center bottom no-repeat;
 	background-size: container;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
 }
 
 .Shelf .detail {
@@ -41,6 +44,6 @@
 	right: 0;
 }
 
-.Shelf .detail span.price::after {
-	content: 'p';
+.Shelf .detail span.price::before {
+	content: 'R$';
 }

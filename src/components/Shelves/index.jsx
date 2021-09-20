@@ -1,21 +1,21 @@
 import React from 'react'
-
 import Shelf from './../Shelf'
 
 import './styles.css'
 
-const Shelves = _ => {
+const Shelves = props => {
+	const { candyList } = props
 	return (
 		<div className="Shelves">
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
-			<Shelf/>
+			{candyList.map((candy, index) => (
+				<Shelf
+					key={index}
+					candyNumber={candy.candyNumber}
+					candyImage={candy.candyImage}
+					candyPrice={candy.candyPrice}
+					candyName={candy.candyName}
+					isFullSize={candy.isFullSize} />
+			))}
 		</div>
 	)
 }

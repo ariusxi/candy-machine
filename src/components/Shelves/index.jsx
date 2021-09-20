@@ -7,8 +7,8 @@ const Shelves = props => {
 	const { candyList } = props
 	return (
 		<div className="Shelves">
-			{candyList.map(candy => (
-				<Shelf {...candy} />
+			{candyList.map((candy, index) => (
+				<Shelf key={index} {...candy} />
 			))}
 		</div>
 	)

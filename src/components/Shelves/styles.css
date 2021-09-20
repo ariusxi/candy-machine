@@ -1,3 +1,4 @@
 .Shelves {
 	background-color: var(--shelves-color);
+	border-radius: 5px;
 }

@@ -6,6 +6,7 @@
 .Tray .coin_return {
 	float: left;
 	width: 50%;
+	border-radius: 5px;
 	color: var(--color-white);
 	height: 6em;
 	line-height: 6em;

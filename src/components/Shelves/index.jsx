@@ -8,13 +8,7 @@ const Shelves = props => {
 	return (
 		<div className="Shelves">
 			{candyList.map((candy, index) => (
-				<Shelf
-					key={index}
-					candyNumber={candy.candyNumber}
-					candyImage={candy.candyImage}
-					candyPrice={candy.candyPrice}
-					candyName={candy.candyName}
-					isFullSize={candy.isFullSize} />
+				<Shelf key={index} {...candy} />
 			))}
 		</div>
 	)

@@ -8,6 +8,11 @@ import Shelves from './../components/Shelves'
 import Tray from './../components/Tray'
 import Vend from './../components/Vend'
 
+// Images
+import Candy1 from './../assets/images/candies/candy1.svg'
+import Candy2 from './../assets/images/candies/candy2.svg'
+import Candy3 from './../assets/images/candies/candy3.svg'
+
 class CandyMachine extends Component {
 
 	state = {
@@ -15,19 +20,19 @@ class CandyMachine extends Component {
 		candyPrice: 0,
 		candyList: [{
 			candyNumber: 1,
-			candyImage: "/candy1.svg",
+			candyImage: Candy1,
 			candyPrice: 6.00,
 			candyName: "Cho co la te"
 		},
 		{
 			candyNumber: 2,
-			candyImage: "/candy2.svg",
+			candyImage: Candy2,
 			candyPrice: 7.00,
 			candyName: "Biscoitos"
 		},
 		{
 			candyNumber: 3,
-			candyImage: "/candy3.svg",
+			candyImage: Candy3,
 			candyPrice: 8.00,
 			candyName: "Doces Sortidos",
 			isFullSize: true,

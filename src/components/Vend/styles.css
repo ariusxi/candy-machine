@@ -44,6 +44,11 @@
 	text-align: right;
 }
 
+.Vend form input[name="currentMoney"] {
+	width: 4em;
+	text-align: center;
+}
+
 .Vend form button {
 	text-transform: uppercase;
 	font-size: 1.25em;

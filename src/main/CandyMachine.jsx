@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Coins from './../components/Coins'
+import Decorators from './../components/Decorators'
 import Machine from './../components/Machine'
 import Section from './../components/Section'
 import Selection from './../components/Selection'
@@ -93,6 +94,9 @@ class CandyMachine extends Component {
 						candyID={this.state.selectedCandy}
 						candyPrice={this.state.candyPrice}
 						currentMoney={this.state.currentMoney}/>
+				</Section>
+				<Section>
+					<Decorators/>
 				</Section>
 				<Section>
 					<Tray/>

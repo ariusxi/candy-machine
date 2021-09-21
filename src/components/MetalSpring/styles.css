@@ -1,3 +1,11 @@
 .MetalSpring {
+	width: 5em;
+	height: 5em;
+	position: absolute;
+	z-index: 1;
+	transition: 2s all;
+}
 
+.MetalSpring.rotating {
+	transform: rotate(360deg);
 }

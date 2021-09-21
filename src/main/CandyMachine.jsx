@@ -69,6 +69,17 @@ class CandyMachine extends Component {
 	}
 
 	currentMoneyIncrement(value){
+		const { currentMoney, selectedCandy } = this.state
+		if (currentMoney >= 10) {
+			this.setState({
+				selectedCandy: "SALDO DEVE SER < 10"
+			})
+
+			// Mostra o erro na tela por 2 segundos
+			const self = this
+			return setTimeout(() => self.setState({ selectedCandy }), 2000)
+		}
+
 		this.setState({
 			currentMoney:  this.state.currentMoney + value
 		})

@@ -37,6 +37,18 @@ class CandyMachine extends Component {
 			candyName: "Doces Sortidos",
 			isFullSize: true,
 		}],
+		coinList:[{
+			coinValue:1,
+			coinLabel:"R$ 1,00",
+		},
+		{
+			coinValue:2,
+			coinLabel:"R$ 2,00",
+		},
+		{
+			coinValue:5,
+			coinLabel:"R$ 5,00",
+		}]
 	}
 
 	constructor(props) {
@@ -65,7 +77,8 @@ class CandyMachine extends Component {
 						selectCandy={this.selectCandy} />
 				</Section>
 				<Section>
-					<Coins />
+					<Coins 
+						coinList={this.state.coinList}/>
 				</Section>
 				<Section>
 					<Vend

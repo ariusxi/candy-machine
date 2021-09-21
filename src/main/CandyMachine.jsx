@@ -18,6 +18,7 @@ class CandyMachine extends Component {
 	state = {
 		selectedCandy: '',
 		candyPrice: 0,
+		currentMoney: 0,
 		candyList: [{
 			candyNumber: 1,
 			candyImage: Candy1,
@@ -38,15 +39,15 @@ class CandyMachine extends Component {
 			isFullSize: true,
 		}],
 		coinList:[{
-			coinValue:1,
+			coinValue:1.00,
 			coinLabel:"R$ 1,00",
 		},
 		{
-			coinValue:2,
+			coinValue:2.00,
 			coinLabel:"R$ 2,00",
 		},
 		{
-			coinValue:5,
+			coinValue:5.00,
 			coinLabel:"R$ 5,00",
 		}]
 	}
@@ -55,6 +56,7 @@ class CandyMachine extends Component {
 		super(props)
 
 		this.selectCandy = this.selectCandy.bind(this)
+		this.currentMoneyIncrement = this.currentMoneyIncrement.bind(this)
 	}
 
 	selectCandy(candyNumber) {
@@ -65,6 +67,11 @@ class CandyMachine extends Component {
 		})
 	}
 
+	currentMoneyIncrement(value){
+		this.setState({
+			currentMoney:  this.state.currentMoney + value
+		})
+	}
 	render() {
 		return (
 			<Machine>
@@ -77,13 +84,15 @@ class CandyMachine extends Component {
 						selectCandy={this.selectCandy} />
 				</Section>
 				<Section>
-					<Coins 
-						coinList={this.state.coinList}/>
+					<Coins
+						coinList={this.state.coinList} 
+						coinIncrement={this.currentMoneyIncrement}/>
 				</Section>
 				<Section>
 					<Vend
 						candyID={this.state.selectedCandy}
-						candyPrice={this.state.candyPrice}/>
+						candyPrice={this.state.candyPrice}
+						currentMoney={this.state.currentMoney}/>
 				</Section>
 				<Section>
 					<Tray/>

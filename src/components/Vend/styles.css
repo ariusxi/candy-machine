@@ -32,13 +32,18 @@
 }
 
 .Vend form input[name="candyprice"] {
-	width: 3em;
+	width: 2.75em;
 	text-align: right;
 }
 
 .Vend form input[name="coinage"] {
-	width: 3em;
+	width: 2.75em;
 	text-align: right;
+}
+
+.Vend form input[name="currentMoney"] {
+	width: 4em;
+	text-align: center;
 }
 
 .Vend form button {

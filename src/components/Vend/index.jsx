@@ -21,7 +21,7 @@ const Vend = props => {
 				<input
 					readOnly
 					type="text"
-					name="coinage"
+					name="candyprice"
 					required={true}
 					placeholder="0.00"
 					value={formatCurrency(candyPrice)}

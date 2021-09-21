@@ -11,17 +11,18 @@
 
 @media (min-width: calc(28em * 2.75)) {
 	.Section {
-		float: left;
-		width: 97%;
+		float: right;
+		width: 63.5%;
 	}
 
-	.Section:nth-child(n + 2):not(:last-child) {
-		float: right;
+	.Section:first-child {
+		float: left;
+		width: 30%;
 	}
 
 	.Section:last-child {
-		float: left;
-		clear: left;
+		float: right;
+		width: 96.8%;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 	}

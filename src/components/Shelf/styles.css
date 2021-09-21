@@ -1,7 +1,6 @@
 .Shelf {
-	display: inline-block;
 	position: relative;
-	width: calc(100% / 3);
+	width: 100%;
 }
 
 .Shelf .item {

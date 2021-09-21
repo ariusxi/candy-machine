@@ -77,7 +77,7 @@ class CandyMachine extends Component {
 			<Machine>
 				<Section>
 					<Shelves
-						candyList={this.state.candyList} />
+						candyList={this.state.candyList}/>
 				</Section>
 				<Section>
 					<Selection
@@ -95,7 +95,7 @@ class CandyMachine extends Component {
 						currentMoney={this.state.currentMoney}/>
 				</Section>
 				<Section>
-					<Tray />
+					<Tray/>
 				</Section>
 			</Machine>
 		)

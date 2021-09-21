@@ -31,8 +31,13 @@
 	text-align: center;
 }
 
+.Vend form input[name="candyprice"] {
+	width: 3em;
+	text-align: right;
+}
+
 .Vend form input[name="coinage"] {
-	width: 2.75em;
+	width: 3em;
 	text-align: right;
 }
 

@@ -36,6 +36,14 @@
 
 	--color-tray-content: #596276;
 	--color-tray-hover: #303853;
+
+	/* Vend */
+	--vend-input-color: #242424;
+	--vend-input-font: #f9ce74;
+	--vend-input-box-shadow: 0 0 0.125em rgb(249 206 116 / 75%);
+
+	--vend-button-color: #464e4e;
+	--vend-button-hover: #353b3b;
 }
 
 @font-face {

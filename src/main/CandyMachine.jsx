@@ -70,7 +70,7 @@ class CandyMachine extends Component {
 
 	currentMoneyIncrement(value){
 		const { currentMoney, selectedCandy } = this.state
-		if (currentMoney >= 10) {
+		if (currentMoney >= 10 || (currentMoney + value) >= 10) {
 			this.setState({
 				selectedCandy: "SALDO DEVE SER < 10"
 			})
@@ -79,10 +79,9 @@ class CandyMachine extends Component {
 			const self = this
 			return setTimeout(() => self.setState({ selectedCandy }), 2000)
 		}
-
-		this.setState({
-			currentMoney:  this.state.currentMoney + value
-		})
+			this.setState({
+				currentMoney:  this.state.currentMoney + value
+			})
 	}
 	render() {
 		return (
@@ -97,7 +96,7 @@ class CandyMachine extends Component {
 				</Section>
 				<Section>
 					<Coins
-						coinList={this.state.coinList} 
+						coinList={this.state.coinList}
 						coinIncrement={this.currentMoneyIncrement}/>
 				</Section>
 				<Section>

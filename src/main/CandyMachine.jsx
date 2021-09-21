@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Coins from './../components/Coins'
+import Decorators from './../components/Decorators'
 import Machine from './../components/Machine'
 import Section from './../components/Section'
 import Selection from './../components/Selection'
@@ -68,6 +69,17 @@ class CandyMachine extends Component {
 	}
 
 	currentMoneyIncrement(value){
+		const { currentMoney, selectedCandy } = this.state
+		if (currentMoney >= 10) {
+			this.setState({
+				selectedCandy: "SALDO DEVE SER < 10"
+			})
+
+			// Mostra o erro na tela por 2 segundos
+			const self = this
+			return setTimeout(() => self.setState({ selectedCandy }), 2000)
+		}
+
 		this.setState({
 			currentMoney:  this.state.currentMoney + value
 		})
@@ -93,6 +105,9 @@ class CandyMachine extends Component {
 						candyID={this.state.selectedCandy}
 						candyPrice={this.state.candyPrice}
 						currentMoney={this.state.currentMoney}/>
+				</Section>
+				<Section>
+					<Decorators/>
 				</Section>
 				<Section>
 					<Tray/>

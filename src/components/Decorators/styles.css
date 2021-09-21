@@ -1,0 +1,12 @@
+.Decorators .cat-paw {
+	width: 12em;
+	height: 12em;
+	float: left;
+}
+
+.Decorators .fortune-cat{
+	width: 9em;
+	margin-right:1em;
+	float:right;
+	transform: rotate(-10deg);
+}

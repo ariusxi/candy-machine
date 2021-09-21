@@ -6,6 +6,8 @@ import './styles.css'
 const Vend = props => {
 	const { candyID, candyPrice } = props
 
+	const formatCurrency = (value) => `R$ ${value.toFixed(2)}`
+	
 	return (
 		<div className="Vend">
 			<form>
@@ -18,12 +20,18 @@ const Vend = props => {
 					value={candyID} />
 				<input
 					readOnly
+					type="text"
+					name="coinage"
+					required={true}
+					placeholder="0.00"
+					value={formatCurrency(candyPrice)}
+					pattern="d+(.d{2})?" />
+				<input
+					readOnly
 					type="number"
 					name="coinage"
 					required={true}
 					placeholder="0.00"
-					step="0.10"
-					value={candyPrice}
 					pattern="d+(.d{2})?" />
 			</form>
 		</div>

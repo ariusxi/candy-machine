@@ -58,22 +58,22 @@ class CandyMachine extends Component {
 			<Machine>
 				<Section>
 					<Shelves
-						candyList={this.state.candyList} />
+						candyList={this.state.candyList}/>
 				</Section>
 				<Section>
 					<Selection
 						selectCandy={this.selectCandy} />
 				</Section>
 				<Section>
-					<Coins />
+					<Coins/>
 				</Section>
 				<Section>
 					<Vend
 						candyID={this.state.selectedCandy}
-						candyPrice={this.state.candyPrice} />
+						candyPrice={this.state.candyPrice}/>
 				</Section>
 				<Section>
-					<Tray />
+					<Tray/>
 				</Section>
 			</Machine>
 		)

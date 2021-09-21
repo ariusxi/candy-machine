@@ -18,11 +18,12 @@
 	.Section:first-child {
 		float: left;
 		width: 30%;
-		border-bottom-left-radius: 5px;
 	}
 
 	.Section:last-child {
 		float: right;
+		width: 96.8%;
+		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 	}
 }

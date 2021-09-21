@@ -5,6 +5,7 @@
 	box-shadow: var(--machine-box-shadow);
 	overflow: hidden;
 	border-radius: 5px;
+	padding-bottom: 10px;
 }
 
 @media (min-width: calc(28em * 1.125)) {

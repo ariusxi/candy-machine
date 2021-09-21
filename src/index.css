@@ -38,6 +38,11 @@
 	--color-tray-hover: #303853;
 }
 
+@font-face {
+    font-family: 'Technology';
+    src: url('/src/assets/fonts/Technology.ttf');
+}
+
 body {
 	background-color: var(--color-magenta);
 	margin: 0;

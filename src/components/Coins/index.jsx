@@ -1,21 +1,23 @@
-import React from 'react'
+import React from "react";
 
-import './styles.css'
+import "./styles.css";
 
-const Coins = _ => {
+const Coins = (props) => {
+	const { coinList, coinIncrement } = props;
+
 	return (
 		<div className="Coins">
-			<div className="coin">
-				<span>50p</span>
-			</div>
-			<div className="coin">
-				<span>20p</span>
-			</div>
-			<div className="coin">
-				<span>10p</span>
-			</div>
+			{coinList.map((coin, index) => (
+				<div className="coin" key={index}>
+					<button
+						className="button"
+						onClick={() => coinIncrement(coin.coinValue)}>
+						{coin.coinLabel}
+					</button>
+				</div>
+			))}
 		</div>
-	)
-}
+	);
+};
 
-export default Coins
+export default Coins;

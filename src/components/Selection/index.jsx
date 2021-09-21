@@ -2,11 +2,8 @@ import React from 'react'
 
 import './styles.css'
 
-
-
 const Selection = props => {
-
-	const {selectCandy} = props
+	const { selectCandy } = props
 
 	return (
 		<div className="Selection">

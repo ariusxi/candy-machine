@@ -1,13 +1,14 @@
 .Tray .tray {
-	width: 64%;
+	width: 32%;
 }
 
 .Tray .tray,
 .Tray .coin_return {
 	float: left;
 	width: 50%;
+	border-radius: 5px;
 	color: var(--color-white);
-	height: 6em;
+	height: 8.59em;
 	line-height: 6em;
 	position: relative;
 	border: 0.125em solid var(--border-tray);
@@ -17,12 +18,12 @@
 }
 
 .Tray .tray {
-	width: 64%;
+	width: 32%;
 }
 
 .Tray .coin_return {
-	width: 32%;
-	margin-left: 2%;
+	width: 64%;
+	margin-left: 3%;
 }
 
 .Tray .tray:before,

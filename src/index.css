@@ -49,6 +49,11 @@
 
 	--vend-button-color: #464e4e;
 	--vend-button-hover: #353b3b;
+
+	/* Decorators */
+	--button-decorator-background: #596276;
+	--button-decorator-color: #FFFFFF;
+	--button-decorator-border: #353b3b;
 }
 
 @font-face {

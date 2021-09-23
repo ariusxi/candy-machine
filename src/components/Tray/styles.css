@@ -22,8 +22,8 @@
 }
 
 .Tray .coin_return {
-	width: 64%;
-	margin-left: 3%;
+	width: 32%;
+	margin-left: 35%;
 }
 
 .Tray .tray:before,
@@ -40,7 +40,13 @@
 }
 
 .Tray .tray:hover:before,
-.Tray .coin_return:hover:before {
+.Tray .coin_return:hover:before,
+.Tray .coin_return.active:before {
 	height: 20%;
 	background: var(--color-tray-hover);
+}
+
+.Tray .coin_return .bill {
+	width: 5em;
+	padding: 5px;
 }

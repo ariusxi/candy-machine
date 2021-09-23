@@ -1,7 +1,40 @@
+.Decorators {
+	display: grid;
+	grid-template-columns: repeat(3, 33.33%);
+}
+
 .Decorators .cat-paw {
 	width: 12em;
 	height: 12em;
 	float: left;
+}
+
+.Decorators .buttons {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.Decorators .buttons button {
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: .2s all;
+
+	background-color: var(--button-decorator-background);
+	color: var(--button-decorator-color);
+	border-bottom: 3px solid var(--button-decorator-border);
+}
+
+.Decorators .buttons button:hover {
+	cursor: pointer;
+}
+
+.Decorators .buttons button:active {
+	background-color: var(--button-decorator-border);
 }
 
 .Decorators .fortune-cat{

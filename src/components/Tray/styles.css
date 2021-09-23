@@ -48,5 +48,9 @@
 
 .Tray .coin_return .bill {
 	width: 5em;
-	padding: 5px;
+	padding: 30px 10px;
+}
+
+.Tray .coin_return .bill.bill-1 {
+	width: 2em;
 }

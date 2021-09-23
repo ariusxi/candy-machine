@@ -19,6 +19,19 @@ const Tray = ({ moneyTray, removeFromTray }) => {
 		return coinImage[coinNumber]
 	}
 
+	const shuffle = (array) => {
+		let currentIndex = array.length, randomIndex
+
+		while (currentIndex !== 0) {
+			randomIndex = Math.floor(Math.random() * currentIndex)
+			currentIndex--
+
+			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
+		}
+
+		return array
+	}
+
 	const removeCoinTray = (index) => {
 		const coinList = moneyList.filter((_, indexCoin) => indexCoin !== index)
 
@@ -34,7 +47,7 @@ const Tray = ({ moneyTray, removeFromTray }) => {
 			if (change >= coins[i]) {
 				const bills = Math.floor(change / coins[i])
 				const changeBills = Array(bills).fill({
-					coin: coins[i]
+					coin: coins[i],
 				})
 
 				setMoneyList((prevState) => [...prevState, ...changeBills])
@@ -47,10 +60,10 @@ const Tray = ({ moneyTray, removeFromTray }) => {
 		<div className="Tray">
 			<div className="tray"></div>
 			<div className={`coin_return ${moneyList.length > 0 ? 'active' : '' }`}>
-				{moneyList.map((bill, index) => (
+				{shuffle(moneyList).map((bill, index) => (
 					<img
 						key={index}
-						className="bill"
+						className={`bill bill-${bill.coin}`}
 						onClick={() => removeCoinTray(index)}
 						src={getCurrencyImage(bill.coin)} 
 						alt={bill.coin}/>

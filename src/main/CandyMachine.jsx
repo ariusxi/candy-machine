@@ -134,7 +134,7 @@ class CandyMachine extends Component {
 				</Section>
 				<Section>
 					<Coins
-						coinList={this.state.coinList} 
+						coinList={this.state.coinList}
 						coinIncrement={this.currentMoneyIncrement}/>
 				</Section>
 				<Section>

@@ -17,6 +17,8 @@ import Candy3 from './../assets/images/candies/candy3.svg'
 class CandyMachine extends Component {
 
 	invalidMoney = 'SALDO DEVE SER < 10'
+	candyNotSelected = 'VOCÊ DEVE ESCOLHER 1 DOCE'
+	insufficientMoney = 'DINHEIRO INSUFICIENTE'
 
 	state = {
 		selectedCandy: '',
@@ -67,6 +69,17 @@ class CandyMachine extends Component {
 		this.currentMoneyIncrement = this.currentMoneyIncrement.bind(this)
 	}
 
+	showErrorMessage(message, messageTimeout = 2000) {
+		const { selectedCandy } = this.state
+ 
+		this.setState({
+			selectedCandy: message,
+		})
+
+		const self = this
+		return setTimeout(() => self.setState({ selectedCandy }), messageTimeout)
+	}
+
 	selectCandy(candyNumber) {
 		const { candyPrice, candyName } = this.state.candyList[candyNumber-1]
 		this.setState({
@@ -76,7 +89,35 @@ class CandyMachine extends Component {
 	}
 
 	buyCandy() {
+		const { 
+			candyList, 
+			currentMoney, 
+			selectedCandy,
+		} = this.state
 
+		const currentCandyIndex = parseInt(selectedCandy.split(' - ')[0]) - 1 
+		const candyBought = candyList[currentCandyIndex]
+
+		if (
+			selectedCandy === this.candyNotSelected ||
+			selectedCandy === this.invalidMoney
+		) {
+			return
+		}
+
+		if (!candyBought) {
+			return this.showErrorMessage(this.candyNotSelected)
+		}
+
+		if (currentMoney < candyBought.candyPrice) {
+			return this.showErrorMessage(this.insufficientMoney)
+		}
+
+		this.setState({
+			currentMoney: 0,
+			candyTray: candyBought,
+			moneyTray: currentMoney - candyBought.candyPrice,
+		})
 	}
 
 	ejectMoney() {
@@ -100,13 +141,7 @@ class CandyMachine extends Component {
 		}
 
 		if ((currentMoney + value) > 10) {
-			this.setState({
-				selectedCandy: this.invalidMoney,
-			})
-
-			// Mostra o erro na tela por 2 segundos
-			const self = this
-			return setTimeout(() => self.setState({ selectedCandy }), 2000)
+			this.showErrorMessage(this.invalidMoney)
 		}
 
 		this.setState({
@@ -114,9 +149,10 @@ class CandyMachine extends Component {
 		})
 	}
 
-	removeFromTray(restMoneyTray = 0) {
+	removeFromTray(restMoneyTray = 0, candyTray = this.state.candyTray) {
 		this.setState({
 			moneyTray: restMoneyTray,
+			candyTray,
 		})
 	}
 
@@ -150,6 +186,7 @@ class CandyMachine extends Component {
 				</Section>
 				<Section>
 					<Tray
+						candyTray={this.state.candyTray}
 						moneyTray={this.state.moneyTray}
 						removeFromTray={this.removeFromTray}/>
 				</Section>

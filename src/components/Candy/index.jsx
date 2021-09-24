@@ -1,19 +1,24 @@
-import React from 'react'
+import React from "react";
 
-import './styles.css'
+import "./styles.css";
 
-const Candy = props => {
-  let classImage = "Candy"
-  if (props.isFullSize) {
-    classImage += " full-size"
-  }
+const Candy = ({
+	candyImage,
+	isFullSize,
+	onClick,
+}) => {
+	let classImage = "Candy";
+	if (isFullSize) {
+		classImage += " full-size";
+	}
 
-  return (
-    <img
-      src={props.candyImage}
-      className={classImage}
-      alt={props.candyImage} />
-  )
-}
+	return (
+		<img
+			src={candyImage}
+			className={classImage}
+			alt={candyImage}
+			onClick={onClick}/>
+	);
+};
 
-export default Candy
+export default Candy;

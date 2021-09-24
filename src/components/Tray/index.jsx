@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
+import Candy from './../Candy'
+
 import Bill1 from './../../assets/images/currencies/real bill - 1.png'
 import Bill2 from './../../assets/images/currencies/real bill - 2.png'
 import Bill3 from './../../assets/images/currencies/real bill - 5.png'
 
 import './styles.css'
 
-const Tray = ({ moneyTray, removeFromTray }) => {
+const Tray = ({ 
+	candyTray,
+	moneyTray, 
+	removeFromTray,
+}) => {
+	const [candyList, setCandyList] = useState([])
 	const [moneyList, setMoneyList] = useState([])
 
 	const getCurrencyImage = (coinNumber) => {
@@ -32,35 +39,69 @@ const Tray = ({ moneyTray, removeFromTray }) => {
 		return array
 	}
 
+	const removeFromArray = (array, index) => {
+		return array.filter((_, indexArray) => indexArray !== index)
+	}
+
 	const removeCoinTray = (index) => {
-		const coinList = moneyList.filter((_, indexCoin) => indexCoin !== index)
+		const coinList = removeFromArray(moneyList, index)
 
 		removeFromTray(moneyTray - moneyList[index])
 		setMoneyList(coinList)
 	}
 
+	const removeCandyTray = (index) => {
+		const candyTrayList = removeFromArray(candyList, index)
+
+		removeFromTray(moneyTray, null)
+		setCandyList(candyTrayList)
+	}
+
 	useEffect(() => {
-		let coins = [5, 2, 1]
-		let change = moneyTray
+		const getBillsByChange = () => {
+			let coins = [5, 2, 1]
+			let change = moneyTray
 
-		for (let i = 0; i < coins.length; i++) {
-			if (change >= coins[i]) {
-				const bills = Math.floor(change / coins[i])
-				const changeBills = Array(bills).fill({
-					coin: coins[i],
-				})
+			setMoneyList([])
 
-				setMoneyList((prevState) => [...prevState, ...changeBills])
-				change -= bills * coins[i]
+			for (let i = 0; i < coins.length; i++) {
+				if (change >= coins[i]) {
+					const bills = Math.floor(change / coins[i])
+					const changeBills = Array(bills).fill({
+						coin: coins[i],
+					})
+
+					setMoneyList((prevState) => 
+						shuffle([...prevState, ...changeBills])
+					)
+					change -= bills * coins[i]
+				}
 			}
 		}
-	}, [moneyTray])
+
+		const getCandyByPrice = () => {
+			if (!candyTray) return
+
+			setCandyList((prevState) => [...prevState, candyTray])
+		}
+
+		getBillsByChange()
+		getCandyByPrice()
+	}, [candyTray, moneyTray])
 
 	return (
 		<div className="Tray">
-			<div className="tray"></div>
+			<div className={`tray ${candyList.length > 0 ? 'active' : ''}`}>
+				{candyList.map((candy, index) => (
+					<Candy
+						key={index}
+						candyImage={candy.candyImage}
+						isFullSize={candy.isFullSize}
+						onClick={() => removeCandyTray(index)}/>
+				))}
+			</div>
 			<div className={`coin_return ${moneyList.length > 0 ? 'active' : '' }`}>
-				{shuffle(moneyList).map((bill, index) => (
+				{moneyList.map((bill, index) => (
 					<img
 						key={index}
 						className={`bill bill-${bill.coin}`}

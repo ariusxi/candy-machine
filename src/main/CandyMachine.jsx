@@ -14,6 +14,10 @@ import Candy1 from './../assets/images/candies/candy1.svg'
 import Candy2 from './../assets/images/candies/candy2.svg'
 import Candy3 from './../assets/images/candies/candy3.svg'
 
+// Sounds
+import CoinInsertSound from './../assets/sounds/coin-insert.mp3'
+import SelectionSound from './../assets/sounds/selection-sound.mp3'
+
 class CandyMachine extends Component {
 
 	invalidMoney = 'SALDO DEVE SER < 10'
@@ -30,7 +34,7 @@ class CandyMachine extends Component {
 			candyNumber: 1,
 			candyImage: Candy1,
 			candyPrice: 6,
-			candyName: "Cho co la te"
+			candyName: "Chocolate"
 		},
 		{
 			candyNumber: 2,
@@ -82,6 +86,9 @@ class CandyMachine extends Component {
 
 	selectCandy(candyNumber) {
 		const { candyPrice, candyName } = this.state.candyList[candyNumber-1]
+
+		new Audio(SelectionSound).play()
+
 		this.setState({
 			selectedCandy: (`${candyNumber} - ${candyName}`),
 			candyPrice,
@@ -141,8 +148,10 @@ class CandyMachine extends Component {
 		}
 
 		if ((currentMoney + value) > 10) {
-			this.showErrorMessage(this.invalidMoney)
+			return this.showErrorMessage(this.invalidMoney)
 		}
+
+		new Audio(CoinInsertSound).play()
 
 		this.setState({
 			currentMoney:  this.state.currentMoney + value,
@@ -162,7 +171,8 @@ class CandyMachine extends Component {
 			<Machine>
 				<Section>
 					<Shelves
-						candyList={this.state.candyList}/>
+						candyList={this.state.candyList}
+						candyBought={this.state.candyTray}/>
 				</Section>
 				<Section>
 					<Selection

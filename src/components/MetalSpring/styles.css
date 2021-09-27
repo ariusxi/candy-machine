@@ -3,7 +3,7 @@
 	height: 5em;
 	position: absolute;
 	z-index: 1;
-	transition: 2s all;
+	transition: 1s all;
 }
 
 .MetalSpring.rotating {

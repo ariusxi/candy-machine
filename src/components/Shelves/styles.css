@@ -2,5 +2,6 @@
 	background-color: var(--shelves-color);
 	border-radius: 5px;
 	display: grid;
+	overflow: hidden;
 	grid-template-columns: repeat(1, 100%);
 }

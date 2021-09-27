@@ -2,9 +2,7 @@ import React from "react";
 
 import "./styles.css";
 
-const Coins = (props) => {
-	const { coinList, coinIncrement } = props;
-
+const Coins = ({ coinList, coinIncrement }) => {
 	return (
 		<div className="Coins">
 			{coinList.map((coin, index) => (

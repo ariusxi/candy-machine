@@ -3,12 +3,14 @@ import Shelf from './../Shelf'
 
 import './styles.css'
 
-const Shelves = props => {
-	const { candyList } = props
+const Shelves = ({ candyList, candyBought }) => {
 	return (
 		<div className="Shelves">
 			{candyList.map((candy, index) => (
-				<Shelf key={index} {...candy} />
+				<Shelf 
+					key={index}
+					candyBought={candyBought}
+					{...candy} />
 			))}
 		</div>
 	)

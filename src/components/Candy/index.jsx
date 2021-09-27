@@ -5,17 +5,26 @@ import "./styles.css";
 const Candy = ({
 	candyImage,
 	isFullSize,
+	isFallingDown,
 	onClick,
 }) => {
-	let classImage = "Candy";
-	if (isFullSize) {
-		classImage += " full-size";
+
+	const getClassImage = () => {
+		let classImage = "Candy"
+		if (isFullSize) {
+			classImage += " full-size"
+		}
+		if (isFallingDown) {
+			classImage += " falling"
+		}
+
+		return classImage
 	}
 
 	return (
 		<img
 			src={candyImage}
-			className={classImage}
+			className={getClassImage()}
 			alt={candyImage}
 			onClick={onClick}/>
 	);

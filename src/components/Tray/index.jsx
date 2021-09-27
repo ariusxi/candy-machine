@@ -6,6 +6,8 @@ import Bill1 from './../../assets/images/currencies/real bill - 1.png'
 import Bill2 from './../../assets/images/currencies/real bill - 2.png'
 import Bill3 from './../../assets/images/currencies/real bill - 5.png'
 
+import TraySoundClose from './../../assets/sounds/tray-sound-close.mp3'
+
 import './styles.css'
 
 const Tray = ({ 
@@ -46,12 +48,20 @@ const Tray = ({
 	const removeCoinTray = (index) => {
 		const coinList = removeFromArray(moneyList, index)
 
+		if (coinList.length <= 0) {
+			new Audio(TraySoundClose).play()
+		}
+
 		removeFromTray(moneyTray - moneyList[index])
 		setMoneyList(coinList)
 	}
 
 	const removeCandyTray = (index) => {
 		const candyTrayList = removeFromArray(candyList, index)
+
+		if (candyTrayList.length <= 0) {
+			new Audio(TraySoundClose).play()
+		}
 
 		removeFromTray(moneyTray, null)
 		setCandyList(candyTrayList)
@@ -79,17 +89,18 @@ const Tray = ({
 			}
 		}
 
+		setTimeout(() => getBillsByChange(), 2000)
+	}, [moneyTray])
+
+	useEffect(() => {
 		const getCandyByPrice = () => {
 			if (!candyTray) return
 
 			setCandyList((prevState) => [...prevState, candyTray])
 		}
 
-		setTimeout(() => {
-			getBillsByChange()
-			getCandyByPrice()
-		}, 2000)
-	}, [candyTray, moneyTray])
+		setTimeout(() => getCandyByPrice(), 2000)
+	}, [candyTray])
 
 	return (
 		<div className="Tray">

@@ -16,7 +16,10 @@ import Candy3 from './../assets/images/candies/candy3.svg'
 
 // Sounds
 import CoinInsertSound from './../assets/sounds/coin-insert.mp3'
+import MachineSoundRun from './../assets/sounds/machine-sound-run.mp3'
 import SelectionSound from './../assets/sounds/selection-sound.mp3'
+import TrayCoinDrop from './../assets/sounds/tray-coin-drop.mp3'
+import TraySoundOpen from './../assets/sounds/tray-sound-open.mp3'
 
 class CandyMachine extends Component {
 
@@ -30,6 +33,7 @@ class CandyMachine extends Component {
 		currentMoney: 0,
 		moneyTray: 0,
 		candyTray: null,
+		shakingMachine: false,
 		candyList: [{
 			candyNumber: 1,
 			candyImage: Candy1,
@@ -73,6 +77,10 @@ class CandyMachine extends Component {
 		this.currentMoneyIncrement = this.currentMoneyIncrement.bind(this)
 	}
 
+	soundPlay(soundPath) {
+		new Audio(soundPath).play()
+	}
+
 	showErrorMessage(message, messageTimeout = 2000) {
 		const { selectedCandy } = this.state
  
@@ -87,7 +95,7 @@ class CandyMachine extends Component {
 	selectCandy(candyNumber) {
 		const { candyPrice, candyName } = this.state.candyList[candyNumber-1]
 
-		new Audio(SelectionSound).play()
+		this.soundPlay(SelectionSound)
 
 		this.setState({
 			selectedCandy: (`${candyNumber} - ${candyName}`),
@@ -120,8 +128,22 @@ class CandyMachine extends Component {
 			return this.showErrorMessage(this.insufficientMoney)
 		}
 
+		this.soundPlay(MachineSoundRun)
+		
+		// Disabling machine shake after 2 seconds
+		const self = this
+		setTimeout(() => {
+			// Disable shake maching
+			self.setState({ shakingMachine: false })
+			// Play tray sound
+			self.soundPlay(TraySoundOpen)
+		}, 2000)
+
 		this.setState({
+			selectedCandy: '',
 			currentMoney: 0,
+			candyPrice: 0,
+			shakingMachine: true,
 			candyTray: candyBought,
 			moneyTray: currentMoney - candyBought.candyPrice,
 		})
@@ -133,6 +155,11 @@ class CandyMachine extends Component {
 		if (currentMoney <= 0) {
 			return
 		}
+
+		this.soundPlay(TrayCoinDrop)
+
+		const self = this
+		setTimeout(() => self.soundPlay(TraySoundOpen), 2000)
 
 		this.setState({
 			currentMoney: 0,
@@ -151,7 +178,7 @@ class CandyMachine extends Component {
 			return this.showErrorMessage(this.invalidMoney)
 		}
 
-		new Audio(CoinInsertSound).play()
+		this.soundPlay(CoinInsertSound)
 
 		this.setState({
 			currentMoney:  this.state.currentMoney + value,
@@ -168,7 +195,8 @@ class CandyMachine extends Component {
 
 	render() {
 		return (
-			<Machine>
+			<Machine
+				shakingMachine={this.state.shakingMachine}>
 				<Section>
 					<Shelves
 						candyList={this.state.candyList}

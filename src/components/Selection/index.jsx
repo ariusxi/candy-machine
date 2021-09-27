@@ -2,9 +2,7 @@ import React from 'react'
 
 import './styles.css'
 
-const Selection = props => {
-	const { selectCandy } = props
-
+const Selection = ({ selectCandy }) => {
 	return (
 		<div className="Selection">
 			<span onClick={() => selectCandy(1)}>1</span>

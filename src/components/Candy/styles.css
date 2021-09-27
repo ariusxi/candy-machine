@@ -1,10 +1,42 @@
 .Candy {
-  height: 75%;
-  width: 75%;
-  z-index: 2;
+	height: 75%;
+	width: 75%;
+	z-index: 2;
+	transition: 1s all;
 }
 
 .Candy.full-size {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+.Candy.falling {
+	width: 5em;
+	position: absolute;
+	z-index: 10;
+	animation-name: falling;
+	animation-duration: 1s;
+}
+
+@keyframes falling {
+	0% { 
+		top: 0%;
+		transform: rotate(0deg);
+	}
+	25% { 
+		top: 85%;
+		transform: rotate(90deg);
+	}
+	50% { 
+		top: 170%;
+		transform: rotate(180deg);
+	}
+	75% { 
+		top: 255%;
+		transform: rotate(270deg);
+	}
+	100% { 
+		top: 340%;
+		transform: rotate(360deg);
+	}
 }

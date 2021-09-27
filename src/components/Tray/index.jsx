@@ -85,8 +85,10 @@ const Tray = ({
 			setCandyList((prevState) => [...prevState, candyTray])
 		}
 
-		getBillsByChange()
-		getCandyByPrice()
+		setTimeout(() => {
+			getBillsByChange()
+			getCandyByPrice()
+		}, 2000)
 	}, [candyTray, moneyTray])
 
 	return (

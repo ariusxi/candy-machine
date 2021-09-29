@@ -60,3 +60,10 @@
 .Tray .coin_return .bill.bill-1 {
 	width: 2em;
 }
+
+@media screen and (max-width: 380px) {
+	.Tray .coin_return {
+		margin-left: 0px;
+		float: right;
+	}
+}

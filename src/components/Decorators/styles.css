@@ -43,3 +43,15 @@
 	float:right;
 	transform: rotate(-10deg);
 }
+
+@media screen and (max-width: 380px) {
+	.Decorators .cat-paw {
+		width: 6em;
+	}
+
+	.Decorators .fortune-cat {
+		width: 6em;
+		margin-top: 2em;
+		margin-left: 1em;
+	}
+}

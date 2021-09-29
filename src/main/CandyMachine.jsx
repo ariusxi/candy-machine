@@ -129,6 +129,10 @@ class CandyMachine extends Component {
 		}
 
 		this.soundPlay(MachineSoundRun)
+
+		if ("vibrate" in navigator) {
+			navigator.vibrate(2000);
+		}
 		
 		// Disabling machine shake after 2 seconds
 		const self = this
